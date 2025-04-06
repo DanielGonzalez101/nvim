@@ -11,7 +11,7 @@ return {
 				folds = false,
 			},
 			overrides = {
-				-- puedes poner overrides si querés cambiar colores puntuales
+				Cursor = { fg = "#282828", bg = "#EBDBB2" },-- puedes poner overrides si querés cambiar colores puntuales
 			},
 		})
 

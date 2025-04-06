@@ -17,7 +17,7 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-
+vim.api.nvim_set_hl(0, "IblIndent", { fg = "#504945" }) -- un gris suave de gruvbox
 -- local opts = {}
 vim.api.nvim_set_hl(0, "Comment", { italic = false })
 vim.api.nvim_set_hl(0, "Function", { italic = false })
@@ -27,6 +27,7 @@ vim.api.nvim_set_hl(0, "Keyword", { italic = false })
 --require("vim-options")
 require("lazy").setup("plugins")
 require("vim-options")
+
 
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = "*.go",

@@ -28,6 +28,7 @@ vim.o.clipboard = "unnamedplus"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
+
 require('nvim-web-devicons').setup {
   default = true; -- Habilita íconos predeterminados
 }
