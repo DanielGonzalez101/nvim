@@ -4,9 +4,18 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.opt.termguicolors = true
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 
--- Ruta para Lazy.nvim
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.cmd([[
+      highlight! link SignColumn Normal
+    ]])
+	end,
+})
+
+-- Ruta para Lazy.nvim-- Ruta para Lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -49,6 +58,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 		if not vim.bo.readonly and not vim.bo.modifiable then
 			vim.bo.modifiable = true
 		end
+		vim.bo.fileformat = "unix"
 		vim.bo.fileformat = "unix"
 	end,
 })

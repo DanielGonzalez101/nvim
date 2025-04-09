@@ -7,6 +7,6 @@ return {
       vim.cmd("colorscheme kanagawa-dragon") -- Aplica el tema
     end,
     config = function()
---vim.cmd.colorscheme "kanagawa-dragon"
+      --vim.cmd.colorscheme "kanagawa-dragon"
     end
 }

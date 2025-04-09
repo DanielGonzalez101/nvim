@@ -6,6 +6,9 @@ vim.api.nvim_create_autocmd("InsertLeave", {
   end,
 })
 
+
+
+
 -- Activar números absolutos en modo insert
 vim.api.nvim_create_autocmd("InsertEnter", {
   pattern = "*",
