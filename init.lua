@@ -1,10 +1,11 @@
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+vim.cmd("set tabstop=4")
+vim.cmd("set softtabstop=4")
+vim.cmd("set shiftwidth=4")
 vim.g.mapleader = " "
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
+vim.o.scrolloff = 8
 
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
@@ -50,6 +51,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		vim.lsp.buf.format({ async = false })
 	end,
 })
+vim.diagnostic.config({
+	signs = false, -- esto quita los íconos/indicadores de la columna izquierda
+})
+
+vim.bo.modifiable = true
 
 -- Asegurarse de que los buffers sean modificables antes de cambiar el formato
 vim.api.nvim_create_autocmd("BufReadPost", {

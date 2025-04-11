@@ -30,6 +30,8 @@ return {
 		}
 
 		dashboard.section.footer.opts.hl = "Comment"
+		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#EBDBB2" }) -- rosa
+		dashboard.section.header.opts.hl = "AlphaHeader"
 
 		alpha.setup(dashboard.opts)
 	end,
