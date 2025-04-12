@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     ]])
 	end,
 })
+vim.o.cursorline = true
 
 -- Ruta para Lazy.nvim-- Ruta para Lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
