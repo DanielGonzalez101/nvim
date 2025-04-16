@@ -6,7 +6,6 @@ return {
         theme = 'auto'
       }
     })
-    
   end
 }
 

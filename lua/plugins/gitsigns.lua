@@ -3,5 +3,5 @@ return {
   event = "BufReadPre",
   config = function()
     require("gitsigns").setup()
-  end,
+  end
 }

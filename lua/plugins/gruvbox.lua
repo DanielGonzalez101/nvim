@@ -2,7 +2,12 @@ return {
 	"ellisonleao/gruvbox.nvim",
 	priority = 1000, -- Para que se cargue primero
 	config = function()
+		-- Lee la variable de entorno NVIM_THEME
+		--local theme = os.getenv("NVIM_THEME") or "dark" -- Si no está configurada, usa 'dark' por defecto
+		vim.o.background = "dark"
+		-- Configuración del plugin Gruvbox
 		require("gruvbox").setup({
+            terminal_colors = true,
 			contrast = "medium", -- o "soft" o "medium"
 			italic = {
 				strings = false,
@@ -10,12 +15,8 @@ return {
 				operators = false,
 				folds = false,
 			},
-			overrides = {
-				--Cursor = { fg = "#282828", bg = "#EBDBB2" }, -- puedes poner overrides si querés cambiar colores puntuales
-				--String = {fg = "#8EC07C"}
-			},
+			bold = false, -- Desactiva el bold
 		})
-
-		vim.cmd.colorscheme("gruvbox")
+		vim.cmd.colorscheme("gruvbox") -- Aplica el tema Gruvbox
 	end,
 }
