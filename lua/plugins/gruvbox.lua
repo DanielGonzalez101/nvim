@@ -7,7 +7,7 @@ return {
 		vim.o.background = "dark"
 		-- Configuración del plugin Gruvbox
 		require("gruvbox").setup({
-            terminal_colors = true,
+			terminal_colors = true,
 			contrast = "medium", -- o "soft" o "medium"
 			italic = {
 				strings = false,
