@@ -128,3 +128,7 @@ vim.notify = function(msg, level, opts)
     end
     original_notify(msg, level, opts)
 end
+require("config.java-runner")
+
+vim.keymap.set("n", "<leader>jb", ":JavaBuild<CR>", { desc = "Java Build" })
+vim.keymap.set("n", "<leader>jr", ":JavaRun<CR>", { desc = "Java Run" })
