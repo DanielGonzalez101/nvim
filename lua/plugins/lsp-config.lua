@@ -40,6 +40,7 @@ return {
 					"lua_ls",
 					"gopls",
 					"jdtls", -- 👈 agregado soporte para Java
+					"angularls",
 				},
 				automatic_installation = true,
 			})
@@ -75,6 +76,21 @@ return {
 			}
 
 			lspconfig.ts_ls.setup(common_setup)
+			-- Angular (angular-language-server)
+			lspconfig.angularls.setup({
+				on_new_config = function(new_config, _)
+					new_config.cmd = {
+						"ngserver",
+						"--stdio",
+						"--tsProbeLocations",
+						"",
+						"--ngProbeLocations",
+						"",
+					}
+				end,
+				filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
+				root_dir = lspconfig.util.root_pattern("angular.json", "project.json"),
+			})
 			lspconfig.solargraph.setup(common_setup)
 			lspconfig.html.setup(common_setup)
 
@@ -131,6 +147,24 @@ return {
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 			end
+
+			local lspconfig = require("lspconfig")
+			local util = require("lspconfig.util")
+
+			lspconfig.angularls.setup({
+				cmd = {
+					"node",
+					vim.fn.stdpath("data")
+						.. "/mason/packages/angular-language-server/node_modules/@angular/language-server/bin/ngserver",
+					"--stdio",
+					"--tsProbeLocations",
+					vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules",
+					"--ngProbeLocations",
+					vim.fn.stdpath("data") .. "/mason/packages/angular-language-server/node_modules",
+				},
+				filetypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
+				root_dir = util.root_pattern("angular.json", "project.json", "tsconfig.json"),
+			})
 		end,
 	},
 }
