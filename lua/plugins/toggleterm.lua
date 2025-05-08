@@ -8,7 +8,7 @@ return {
 				border = "single", -- puedes cambiar a "single", "double", etc.
 				width = 80,
 				height = 20,
-				winblend = 0, -- transparencia
+				winblend = 1, -- transparencia
 			},
 			open_mapping = [[<C-t>]],
 			shade_terminals = true, -- para ver el código detrás
