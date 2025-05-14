@@ -17,6 +17,6 @@ return {
 			},
 			bold = false, -- Desactiva el bold
 		})
---		vim.cmd.colorscheme("gruvbox") -- Aplica el tema Gruvbox
+		vim.cmd.colorscheme("gruvbox") -- Aplica el tema Gruvbox
 	end,
 }

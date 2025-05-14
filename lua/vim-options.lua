@@ -48,11 +48,5 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 -- Cerrar la ventana actual
 vim.keymap.set("n", "<leader>q", "<C-w>c", { noremap = true, silent = true })
 
--- Abrir terminal integrada
-vim.keymap.set("n", "<leader>t", ":terminal<CR>", { noremap = true, silent = true })
 
--- Atajo para abrir terminal en una división horizontal
-vim.keymap.set("n", "<leader>st", ":split | terminal<CR>", { noremap = true, silent = true })
 
--- Atajo para abrir terminal en una división vertical
-vim.keymap.set("n", "<leader>vt", ":vsplit | terminal<CR>", { noremap = true, silent = true })

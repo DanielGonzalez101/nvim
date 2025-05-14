@@ -20,6 +20,6 @@ return {
 		})
 		-- Puedes obtener estos desde la documentación del tema o usar :Inspect
 		-- Aquí unos ejemplos comunes:
-			vim.cmd("colorscheme kanagawa-dragon")
+--			vim.cmd("colorscheme kanagawa-dragon")
 	end,
 }
