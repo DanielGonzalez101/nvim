@@ -1,8 +1,8 @@
 -- Configuración de opciones básicas
 vim.cmd("set expandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=4")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set tabstop=2")
+vim.cmd("set softtabstop=2")
+vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
@@ -51,7 +51,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 	end,
 })
 -- 🔥 Esto lo forza incluso si otro plugin intenta sobrescribirlo
-vim.api.nvim_set_hl(0, "SignColumn", { bg = "#282727" })
+--vim.api.nvim_set_hl(0, "SignColumn", { bg = "#282727" })
 -- Configurar diagnósticos (sin signos en la columna)
 vim.diagnostic.config({
 	signs = false,

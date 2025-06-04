@@ -48,5 +48,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 -- Cerrar la ventana actual
 vim.keymap.set("n", "<leader>q", "<C-w>c", { noremap = true, silent = true })
 
-
-
+vim.keymap.set("n", "<leader>ji", function()
+	vim.lsp.buf.code_action()
+end, { desc = "Java organize imports, getters and setters etc..." })

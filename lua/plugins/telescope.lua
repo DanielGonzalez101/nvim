@@ -59,4 +59,21 @@ return {
 	--vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "#2e2e2e", fg = "#2e2e2e" }),
 	--vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = "#1E1C1A", fg = "#1E1C1A" }),
 	--vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = "#1E1E1E", fg = "#1E1E1E" }),
+	---- Después de telescope.setup({...})
+	-- vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "#1f1f28", fg = "#dcd7ba" }), -- fondo result
+	-- vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "#1f1f28", fg = "#dcd7ba" }), -- fondo preview
+	-- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#2a2a37", fg = "#dcd7ba" }), -- prompt
+	--
+	-- -- Bordes "invisibles"
+	-- vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "#1f1f28", fg = "#1f1f28" }),
+	-- vim.api.nvim_set_hl(0, "TelescopePromptBorder", { bg = "#2a2a37", fg = "#2a2a37" }),
+	-- vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = "#1f1f28", fg = "#1f1f28" }),
+	-- vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { bg = "#1f1f28", fg = "#1f1f28" }),
+	--
+	-- -- Colores suaves en el texto
+	-- vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = "#7e9cd8", bold = true }),                -- coincidencias
+	-- vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#2d4f67", fg = "#dcd7ba", bold = true }) -- selección
+
+	-- Fondo base personalizado
+
 }
