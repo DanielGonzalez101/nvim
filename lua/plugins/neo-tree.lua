@@ -17,7 +17,7 @@ return {
 				},
 			},
 			window = {
-				position = "float",
+				position = "left",
 				popup = {
 					size = {
 						height = "80%",
@@ -26,6 +26,8 @@ return {
 					position = "50%",
 					border = "single",
 				},
+				number = false,
+				relativenumber = false,
 			},
 		})
 
