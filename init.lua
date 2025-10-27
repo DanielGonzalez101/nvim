@@ -32,7 +32,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Colores para identación y estilos
---vim.api.nvim_set_hl(0, "IblIndent", { fg = "#504945" }) -- gris suave de gruvbox
+vim.api.nvim_set_hl(0, "IblIndent", { fg = "#504945" }) -- gris suave de gruvbox
 vim.api.nvim_set_hl(0, "Comment", { italic = false })
 vim.api.nvim_set_hl(0, "Function", { italic = false })
 vim.api.nvim_set_hl(0, "Type", { italic = false })

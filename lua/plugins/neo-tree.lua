@@ -17,14 +17,14 @@ return {
 				},
 			},
 			window = {
-				position = "left",
+				position = "float",
 				popup = {
 					size = {
 						height = "80%",
 						width = "50%",
 					},
 					position = "50%",
-					border = "single",
+					border = "solid",
 				},
 				number = false,
 				relativenumber = false,

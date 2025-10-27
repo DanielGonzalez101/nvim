@@ -26,6 +26,13 @@ return {
 						preview_cutoff = 0, -- muestra siempre el preview
 					},
 					color_devicons = true,
+
+					file_ignore_patterns = {
+						"%.class$", -- Ignora archivos .class
+						"%.jar$", -- Opcional: también .jar si no los necesitas
+						"bin/", -- Directorios bin si es común en tu proyecto
+						"target/", -- Maven/Gradle builds
+					},
 				},
 			})
 
@@ -75,5 +82,4 @@ return {
 	-- vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = "#2d4f67", fg = "#dcd7ba", bold = true }) -- selección
 
 	-- Fondo base personalizado
-
 }

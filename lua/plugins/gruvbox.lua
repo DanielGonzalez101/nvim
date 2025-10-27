@@ -1,20 +1,15 @@
 return {
-	"ellisonleao/gruvbox.nvim",
-	priority = 1000, -- Para que se cargue primero
-	config = function()
-		vim.o.background = "dark"
-		-- Configuración del plugin Gruvbox
-		require("gruvbox").setup({
-			terminal_colors = true,
-			contrast = "medium", -- o "soft" o "medium"
-			italic = {
-				strings = false,
-				comments = false,
-				operators = false,
-				folds = false,
-			},
-			bold = false, -- Desactiva el bold
-		})
-		vim.cmd.colorscheme("gruvbox") -- Aplica el tema Gruvbox
-	end,
+  "sainnhe/gruvbox-material",
+  enabled = true,
+  priority = 1000,
+  config = function()
+    vim.g.gruvbox_material_transparent_background = 1
+    vim.g.gruvbox_material_foreground = "mix"
+    vim.g.gruvbox_material_background = "hard"
+    vim.g.gruvbox_material_ui_contrast = "high"
+    vim.g.gruvbox_material_float_style = "bright"
+    vim.g.gruvbox_material_statusline_style = "material"
+    vim.g.gruvbox_material_cursor = "auto"
+    vim.cmd.colorscheme("gruvbox-material")
+  end,
 }
