@@ -69,8 +69,8 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- Estilos para ventanas flotantes
---vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#282828" })
---vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#a89984", bg = "#282828" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#282828" })
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#a89984", bg = "#282828" })
 
 -- Cargar snippets desde carpeta personalizada
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/snippets" })
