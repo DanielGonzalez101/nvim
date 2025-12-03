@@ -24,3 +24,31 @@ jdtls.start_or_attach({
 })
 
 
+
+local function open_run_terminal(cmd)
+  -- Abrir una terminal flotante
+  vim.cmd("botright split term://" .. cmd)
+  vim.cmd("resize 15") -- tamaño de la terminal
+end
+
+vim.keymap.set("n", "<leader>r", function()
+  local has_maven = vim.fn.filereadable("pom.xml") == 1
+  local has_gradle = vim.fn.filereadable("build.gradle") == 1 or vim.fn.filereadable("build.gradle.kts") == 1
+
+  if has_maven then
+    open_run_terminal("mvn spring-boot:run")
+    return
+  end
+
+  if has_gradle then
+    open_run_terminal("./gradlew bootRun")
+    return
+  end
+
+  -- Java puro
+  local file = vim.fn.expand("%:p")
+  local dir = vim.fn.expand("%:p:h")
+  local main = vim.fn.expand("%:t:r")
+  open_run_terminal("bash -c 'javac " .. file .. " && java -cp " .. dir .. " " .. main .. "'")
+end, { buffer = true, desc = "Run Java Project" })
+
