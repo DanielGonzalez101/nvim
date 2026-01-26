@@ -32,7 +32,7 @@ return {
           "emmet_ls",
           "tailwindcss",
           "pyright",
-          "omnisharp",
+--          "omnisharp",
         },
         automatic_installation = true,
       })
@@ -305,32 +305,32 @@ return {
       })
 
       -- C# / Unity (OmniSharp)
-      vim.lsp.config("omnisharp", {
-        cmd = {
-          vim.fn.stdpath("data") .. "/mason/packages/omnisharp/omnisharp",
-        },
-        filetypes = { "cs" },
-        root_markers = { "*.sln", "*.csproj", ".git" },
-        capabilities = capabilities,
-        on_attach = common_on_attach,
-        handlers = handlers,
-        settings = {
-          FormattingOptions = {
-            EnableEditorConfigSupport = true,
-            OrganizeImports = true,
-          },
-          MsBuild = {
-            LoadProjectsOnDemand = true,
-          },
-          RoslynExtensionsOptions = {
-            EnableAnalyzersSupport = true,
-            EnableImportCompletion = true,
-          },
-          Sdk = {
-            IncludePrereleases = true,
-          },
-        },
-      })
+     -- vim.lsp.config("omnisharp", {
+     -- cmd = {
+     --  vim.fn.stdpath("data") .. "/mason/packages/omnisharp/omnisharp",
+     --   },
+     --   filetypes = { "cs" },
+     --   root_markers = { "*.sln", "*.csproj", ".git" },
+     --   capabilities = capabilities,
+     --   on_attach = common_on_attach,
+     --   handlers = handlers,
+     --   settings = {
+     --     FormattingOptions = {
+     --       EnableEditorConfigSupport = true,
+     --       OrganizeImports = true,
+     --     },
+     --     MsBuild = {
+     --       LoadProjectsOnDemand = true,
+     --     },
+     --     RoslynExtensionsOptions = {
+     --       EnableAnalyzersSupport = true,
+     --       EnableImportCompletion = true,
+     --     },
+     --     Sdk = {
+     --       IncludePrereleases = true,
+     --     },
+     --   },
+     -- })
 
       -- Angular
       vim.lsp.config("angularls", {
@@ -353,7 +353,7 @@ return {
       vim.lsp.enable("tailwindcss")
       vim.lsp.enable("pyright")
 --      vim.lsp.enable("angularls")
-      vim.lsp.enable("omnisharp")
+      --vim.lsp.enable("omnisharp")
     end,
   },
 }

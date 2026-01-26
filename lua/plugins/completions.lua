@@ -144,12 +144,6 @@ return {
 					throttle = 60,
 					fetching_timeout = 200,
 				},
-				-- Experimental
-				experimental = {
-					ghost_text = {
-						hl_group = "CmpGhostText",
-					},
-				},
 			})
 		end,
 	},
