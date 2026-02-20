@@ -1,0 +1,1373 @@
+{
+  "MonoBehaviour Class": {
+    "prefix": "mb",
+    "body": [
+      "using UnityEngine;",
+      "",
+      "public class ${1:ClassName} : MonoBehaviour",
+      "{",
+      "\tprivate void Start()",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "",
+      "\tprivate void Update()",
+      "\t{",
+      "\t\t",
+      "\t}",
+      "}"
+    ],
+    "description": "MonoBehaviour class"
+  },
+  "MonoBehaviour Class Empty": {
+    "prefix": "mbe",
+    "body": [
+      "using UnityEngine;",
+      "",
+      "public class ${1:ClassName} : MonoBehaviour",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Empty MonoBehaviour class"
+  },
+  "ScriptableObject": {
+    "prefix": "so",
+    "body": [
+      "using UnityEngine;",
+      "",
+      "[CreateAssetMenu(fileName = \"${1:New${2:Name}}\", menuName = \"${3:ScriptableObjects}/${2}\")]",
+      "public class ${2} : ScriptableObject",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "ScriptableObject"
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "public interface ${1:IName}",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Interface"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "public class ${1:ClassName}",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Class"
+  },
+  "Struct": {
+    "prefix": "struct",
+    "body": [
+      "[System.Serializable]",
+      "public struct ${1:StructName}",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Struct"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "public enum ${1:EnumName}",
+      "{",
+      "\t${2:Value1},",
+      "\t${3:Value2}",
+      "}"
+    ],
+    "description": "Enum"
+  },
+  "SerializeField": {
+    "prefix": "sf",
+    "body": "[SerializeField] private ${1:type} ${2:name};$0",
+    "description": "SerializeField"
+  },
+  "SerializeField with Tooltip": {
+    "prefix": "sft",
+    "body": [
+      "[SerializeField]",
+      "[Tooltip(\"${3:Description}\")]",
+      "private ${1:type} ${2:name};$0"
+    ],
+    "description": "SerializeField with Tooltip"
+  },
+  "Header": {
+    "prefix": "header",
+    "body": "[Header(\"${1:Title}\")]",
+    "description": "Header attribute"
+  },
+  "Space": {
+    "prefix": "space",
+    "body": "[Space(${1:10})]",
+    "description": "Space attribute"
+  },
+  "Range": {
+    "prefix": "range",
+    "body": "[Range(${1:0}, ${2:100})] ${3:public} ${4:float} ${5:value};$0",
+    "description": "Range attribute"
+  },
+  "Tooltip": {
+    "prefix": "tooltip",
+    "body": "[Tooltip(\"${1:Description}\")]",
+    "description": "Tooltip attribute"
+  },
+  "HideInInspector": {
+    "prefix": "hide",
+    "body": "[HideInInspector] public ${1:type} ${2:name};$0",
+    "description": "HideInInspector"
+  },
+  "RequireComponent": {
+    "prefix": "req",
+    "body": "[RequireComponent(typeof(${1:Component}))]",
+    "description": "RequireComponent"
+  },
+  "DisallowMultipleComponent": {
+    "prefix": "disallow",
+    "body": "[DisallowMultipleComponent]",
+    "description": "DisallowMultipleComponent"
+  },
+  "ExecuteInEditMode": {
+    "prefix": "execute",
+    "body": "[ExecuteInEditMode]",
+    "description": "ExecuteInEditMode"
+  },
+  "ContextMenu": {
+    "prefix": "context",
+    "body": [
+      "[ContextMenu(\"${1:Menu Item}\")]",
+      "private void ${2:MethodName}()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "ContextMenu"
+  },
+  "Coroutine": {
+    "prefix": "cor",
+    "body": [
+      "private IEnumerator ${1:CoroutineName}()",
+      "{",
+      "\t$0",
+      "\tyield return null;",
+      "}"
+    ],
+    "description": "Coroutine"
+  },
+  "Coroutine with WaitForSeconds": {
+    "prefix": "corwfs",
+    "body": [
+      "private IEnumerator ${1:CoroutineName}()",
+      "{",
+      "\tyield return new WaitForSeconds(${2:1f});",
+      "\t$0",
+      "}"
+    ],
+    "description": "Coroutine with WaitForSeconds"
+  },
+  "StartCoroutine": {
+    "prefix": "startcor",
+    "body": "StartCoroutine(${1:CoroutineName}());$0",
+    "description": "StartCoroutine"
+  },
+  "StopCoroutine": {
+    "prefix": "stopcor",
+    "body": "StopCoroutine(${1:CoroutineName}());$0",
+    "description": "StopCoroutine"
+  },
+  "WaitForSeconds": {
+    "prefix": "wfs",
+    "body": "yield return new WaitForSeconds(${1:1f});$0",
+    "description": "WaitForSeconds"
+  },
+  "WaitForEndOfFrame": {
+    "prefix": "wfeof",
+    "body": "yield return new WaitForEndOfFrame();$0",
+    "description": "WaitForEndOfFrame"
+  },
+  "WaitForFixedUpdate": {
+    "prefix": "wffu",
+    "body": "yield return new WaitForFixedUpdate();$0",
+    "description": "WaitForFixedUpdate"
+  },
+  "WaitUntil": {
+    "prefix": "wu",
+    "body": "yield return new WaitUntil(() => ${1:condition});$0",
+    "description": "WaitUntil"
+  },
+  "WaitWhile": {
+    "prefix": "ww",
+    "body": "yield return new WaitWhile(() => ${1:condition});$0",
+    "description": "WaitWhile"
+  },
+  "Singleton Pattern": {
+    "prefix": "singleton",
+    "body": [
+      "public static ${1:ClassName} Instance { get; private set; }",
+      "",
+      "private void Awake()",
+      "{",
+      "\tif (Instance == null)",
+      "\t{",
+      "\t\tInstance = this;",
+      "\t\tDontDestroyOnLoad(gameObject);",
+      "\t}",
+      "\telse",
+      "\t{",
+      "\t\tDestroy(gameObject);",
+      "\t}",
+      "\t$0",
+      "}"
+    ],
+    "description": "Singleton pattern"
+  },
+  "Awake": {
+    "prefix": "awake",
+    "body": [
+      "private void Awake()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Awake method"
+  },
+  "Start": {
+    "prefix": "start",
+    "body": [
+      "private void Start()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Start method"
+  },
+  "OnEnable": {
+    "prefix": "onenable",
+    "body": [
+      "private void OnEnable()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnEnable method"
+  },
+  "OnDisable": {
+    "prefix": "ondisable",
+    "body": [
+      "private void OnDisable()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnDisable method"
+  },
+  "OnDestroy": {
+    "prefix": "ondestroy",
+    "body": [
+      "private void OnDestroy()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnDestroy method"
+  },
+  "Update": {
+    "prefix": "update",
+    "body": [
+      "private void Update()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Update method"
+  },
+  "FixedUpdate": {
+    "prefix": "fixedupdate",
+    "body": [
+      "private void FixedUpdate()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "FixedUpdate method"
+  },
+  "LateUpdate": {
+    "prefix": "lateupdate",
+    "body": [
+      "private void LateUpdate()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "LateUpdate method"
+  },
+  "OnApplicationQuit": {
+    "prefix": "onappquit",
+    "body": [
+      "private void OnApplicationQuit()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnApplicationQuit method"
+  },
+  "OnApplicationPause": {
+    "prefix": "onapppause",
+    "body": [
+      "private void OnApplicationPause(bool pauseStatus)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnApplicationPause method"
+  },
+  "OnApplicationFocus": {
+    "prefix": "onappfocus",
+    "body": [
+      "private void OnApplicationFocus(bool hasFocus)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnApplicationFocus method"
+  },
+  "OnValidate": {
+    "prefix": "onvalidate",
+    "body": [
+      "private void OnValidate()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnValidate method"
+  },
+  "OnDrawGizmos": {
+    "prefix": "ondrawgizmos",
+    "body": [
+      "private void OnDrawGizmos()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnDrawGizmos method"
+  },
+  "OnDrawGizmosSelected": {
+    "prefix": "ondrawgizmosselected",
+    "body": [
+      "private void OnDrawGizmosSelected()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnDrawGizmosSelected method"
+  },
+  "OnGUI": {
+    "prefix": "ongui",
+    "body": [
+      "private void OnGUI()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnGUI method"
+  },
+  "OnTriggerEnter": {
+    "prefix": "ontriggerenter",
+    "body": [
+      "private void OnTriggerEnter(Collider other)",
+      "{",
+      "\tif (other.CompareTag(\"${1:Player}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnTriggerEnter method"
+  },
+  "OnTriggerStay": {
+    "prefix": "ontriggerstay",
+    "body": [
+      "private void OnTriggerStay(Collider other)",
+      "{",
+      "\tif (other.CompareTag(\"${1:Player}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnTriggerStay method"
+  },
+  "OnTriggerExit": {
+    "prefix": "ontriggerexit",
+    "body": [
+      "private void OnTriggerExit(Collider other)",
+      "{",
+      "\tif (other.CompareTag(\"${1:Player}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnTriggerExit method"
+  },
+  "OnCollisionEnter": {
+    "prefix": "oncollisionenter",
+    "body": [
+      "private void OnCollisionEnter(Collision collision)",
+      "{",
+      "\tif (collision.gameObject.CompareTag(\"${1:Ground}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnCollisionEnter method"
+  },
+  "OnCollisionStay": {
+    "prefix": "oncollisionstay",
+    "body": [
+      "private void OnCollisionStay(Collision collision)",
+      "{",
+      "\tif (collision.gameObject.CompareTag(\"${1:Ground}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnCollisionStay method"
+  },
+  "OnCollisionExit": {
+    "prefix": "oncollisionexit",
+    "body": [
+      "private void OnCollisionExit(Collision collision)",
+      "{",
+      "\tif (collision.gameObject.CompareTag(\"${1:Ground}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnCollisionExit method"
+  },
+  "OnTriggerEnter2D": {
+    "prefix": "ontriggerenter2d",
+    "body": [
+      "private void OnTriggerEnter2D(Collider2D other)",
+      "{",
+      "\tif (other.CompareTag(\"${1:Player}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnTriggerEnter2D method"
+  },
+  "OnTriggerStay2D": {
+    "prefix": "ontriggerstay2d",
+    "body": [
+      "private void OnTriggerStay2D(Collider2D other)",
+      "{",
+      "\tif (other.CompareTag(\"${1:Player}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnTriggerStay2D method"
+  },
+  "OnTriggerExit2D": {
+    "prefix": "ontriggerexit2d",
+    "body": [
+      "private void OnTriggerExit2D(Collider2D other)",
+      "{",
+      "\tif (other.CompareTag(\"${1:Player}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnTriggerExit2D method"
+  },
+  "OnCollisionEnter2D": {
+    "prefix": "oncollisionenter2d",
+    "body": [
+      "private void OnCollisionEnter2D(Collision2D collision)",
+      "{",
+      "\tif (collision.gameObject.CompareTag(\"${1:Ground}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnCollisionEnter2D method"
+  },
+  "OnCollisionStay2D": {
+    "prefix": "oncollisionstay2d",
+    "body": [
+      "private void OnCollisionStay2D(Collision2D collision)",
+      "{",
+      "\tif (collision.gameObject.CompareTag(\"${1:Ground}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnCollisionStay2D method"
+  },
+  "OnCollisionExit2D": {
+    "prefix": "oncollisionexit2d",
+    "body": [
+      "private void OnCollisionExit2D(Collision2D collision)",
+      "{",
+      "\tif (collision.gameObject.CompareTag(\"${1:Ground}\"))",
+      "\t{",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "OnCollisionExit2D method"
+  },
+  "OnMouseDown": {
+    "prefix": "onmousedown",
+    "body": [
+      "private void OnMouseDown()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnMouseDown method"
+  },
+  "OnMouseUp": {
+    "prefix": "onmouseup",
+    "body": [
+      "private void OnMouseUp()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnMouseUp method"
+  },
+  "OnMouseEnter": {
+    "prefix": "onmouseenter",
+    "body": [
+      "private void OnMouseEnter()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnMouseEnter method"
+  },
+  "OnMouseExit": {
+    "prefix": "onmouseexit",
+    "body": [
+      "private void OnMouseExit()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnMouseExit method"
+  },
+  "OnMouseOver": {
+    "prefix": "onmouseover",
+    "body": [
+      "private void OnMouseOver()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnMouseOver method"
+  },
+  "OnMouseDrag": {
+    "prefix": "onmousedrag",
+    "body": [
+      "private void OnMouseDrag()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnMouseDrag method"
+  },
+  "OnBecameVisible": {
+    "prefix": "onbecamevisible",
+    "body": [
+      "private void OnBecameVisible()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnBecameVisible method"
+  },
+  "OnBecameInvisible": {
+    "prefix": "onbecameinvisible",
+    "body": [
+      "private void OnBecameInvisible()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnBecameInvisible method"
+  },
+  "OnAnimatorIK": {
+    "prefix": "onanimatorik",
+    "body": [
+      "private void OnAnimatorIK(int layerIndex)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnAnimatorIK method"
+  },
+  "OnAnimatorMove": {
+    "prefix": "onanima tormove",
+    "body": [
+      "private void OnAnimatorMove()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnAnimatorMove method"
+  },
+  "OnParticleCollision": {
+    "prefix": "onparticlecollision",
+    "body": [
+      "private void OnParticleCollision(GameObject other)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnParticleCollision method"
+  },
+  "OnJointBreak": {
+    "prefix": "onjointbreak",
+    "body": [
+      "private void OnJointBreak(float breakForce)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnJointBreak method"
+  },
+  "OnJointBreak2D": {
+    "prefix": "onjointbreak2d",
+    "body": [
+      "private void OnJointBreak2D(Joint2D brokenJoint)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnJointBreak2D method"
+  },
+  "OnControllerColliderHit": {
+    "prefix": "oncontrollercolliderhit",
+    "body": [
+      "private void OnControllerColliderHit(ControllerColliderHit hit)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnControllerColliderHit method"
+  },
+  "OnAudioFilterRead": {
+    "prefix": "onaudiofilterread",
+    "body": [
+      "private void OnAudioFilterRead(float[] data, int channels)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnAudioFilterRead method"
+  },
+  "OnRenderObject": {
+    "prefix": "onrenderobject",
+    "body": [
+      "private void OnRenderObject()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnRenderObject method"
+  },
+  "OnWillRenderObject": {
+    "prefix": "onwillrenderobject",
+    "body": [
+      "private void OnWillRenderObject()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnWillRenderObject method"
+  },
+  "OnPreCull": {
+    "prefix": "onprecull",
+    "body": [
+      "private void OnPreCull()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnPreCull method"
+  },
+  "OnPreRender": {
+    "prefix": "onprerender",
+    "body": [
+      "private void OnPreRender()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnPreRender method"
+  },
+  "OnPostRender": {
+    "prefix": "onpostrender",
+    "body": [
+      "private void OnPostRender()",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnPostRender method"
+  },
+  "OnRenderImage": {
+    "prefix": "onrenderimage",
+    "body": [
+      "private void OnRenderImage(RenderTexture source, RenderTexture destination)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "OnRenderImage method"
+  },
+  "Debug.Log": {
+    "prefix": "log",
+    "body": "Debug.Log(${1:message});$0",
+    "description": "Debug.Log"
+  },
+  "Debug.LogWarning": {
+    "prefix": "logw",
+    "body": "Debug.LogWarning(${1:message});$0",
+    "description": "Debug.LogWarning"
+  },
+  "Debug.LogError": {
+    "prefix": "loge",
+    "body": "Debug.LogError(${1:message});$0",
+    "description": "Debug.LogError"
+  },
+  "Debug.LogFormat": {
+    "prefix": "logf",
+    "body": "Debug.LogFormat(\"${1:format}\", ${2:args});$0",
+    "description": "Debug.LogFormat"
+  },
+  "Debug.DrawLine": {
+    "prefix": "drawline",
+    "body": "Debug.DrawLine(${1:start}, ${2:end}, ${3:Color.red}, ${4:1f});$0",
+    "description": "Debug.DrawLine"
+  },
+  "Debug.DrawRay": {
+    "prefix": "drawray",
+    "body": "Debug.DrawRay(${1:start}, ${2:direction}, ${3:Color.red}, ${4:1f});$0",
+    "description": "Debug.DrawRay"
+  },
+  "GetComponent": {
+    "prefix": "gc",
+    "body": "GetComponent<${1:Component}>()$0",
+    "description": "GetComponent"
+  },
+  "GetComponentInChildren": {
+    "prefix": "gcic",
+    "body": "GetComponentInChildren<${1:Component}>()$0",
+    "description": "GetComponentInChildren"
+  },
+  "GetComponentInParent": {
+    "prefix": "gcip",
+    "body": "GetComponentInParent<${1:Component}>()$0",
+    "description": "GetComponentInParent"
+  },
+  "GetComponents": {
+    "prefix": "gcs",
+    "body": "GetComponents<${1:Component}>()$0",
+    "description": "GetComponents"
+  },
+  "TryGetComponent": {
+    "prefix": "tgc",
+    "body": [
+      "if (${1:gameObject}.TryGetComponent<${2:Component}>(out var ${3:component}))",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "TryGetComponent"
+  },
+  "AddComponent": {
+    "prefix": "addc",
+    "body": "gameObject.AddComponent<${1:Component}>();$0",
+    "description": "AddComponent"
+  },
+  "FindObjectOfType": {
+    "prefix": "fot",
+    "body": "FindObjectOfType<${1:Type}>()$0",
+    "description": "FindObjectOfType"
+  },
+  "FindObjectsOfType": {
+    "prefix": "fots",
+    "body": "FindObjectsOfType<${1:Type}>()$0",
+    "description": "FindObjectsOfType"
+  },
+  "FindWithTag": {
+    "prefix": "fwt",
+    "body": "GameObject.FindWithTag(\"${1:Tag}\")$0",
+    "description": "FindWithTag"
+  },
+  "FindGameObjectsWithTag": {
+    "prefix": "fgwt",
+    "body": "GameObject.FindGameObjectsWithTag(\"${1:Tag}\")$0",
+    "description": "FindGameObjectsWithTag"
+  },
+  "Instantiate": {
+    "prefix": "inst",
+    "body": "Instantiate(${1:prefab}, ${2:position}, ${3:Quaternion.identity});$0",
+    "description": "Instantiate"
+  },
+  "Instantiate with parent": {
+    "prefix": "instp",
+    "body": "Instantiate(${1:prefab}, ${2:parent});$0",
+    "description": "Instantiate with parent"
+  },
+  "Destroy": {
+    "prefix": "dest",
+    "body": "Destroy(${1:gameObject});$0",
+    "description": "Destroy"
+  },
+  "DestroyImmediate": {
+    "prefix": "desti",
+    "body": "DestroyImmediate(${1:gameObject});$0",
+    "description": "DestroyImmediate"
+  },
+  "DontDestroyOnLoad": {
+    "prefix": "ddol",
+    "body": "DontDestroyOnLoad(${1:gameObject});$0",
+    "description": "DontDestroyOnLoad"
+  },
+  "Invoke": {
+    "prefix": "invoke",
+    "body": "Invoke(\"${1:MethodName}\", ${2:0f});$0",
+    "description": "Invoke"
+  },
+  "InvokeRepeating": {
+    "prefix": "invokerepeating",
+    "body": "InvokeRepeating(\"${1:MethodName}\", ${2:0f}, ${3:1f});$0",
+    "description": "InvokeRepeating"
+  },
+  "CancelInvoke": {
+    "prefix": "cancelinvoke",
+    "body": "CancelInvoke(\"${1:MethodName}\");$0",
+    "description": "CancelInvoke"
+  },
+  "IsInvoking": {
+    "prefix": "isinvoking",
+    "body": "IsInvoking(\"${1:MethodName}\")$0",
+    "description": "IsInvoking"
+  },
+  "CompareTag": {
+    "prefix": "ctag",
+    "body": "CompareTag(\"${1:Tag}\")$0",
+    "description": "CompareTag"
+  },
+  "SetActive": {
+    "prefix": "setactive",
+    "body": "${1:gameObject}.SetActive(${2:true});$0",
+    "description": "SetActive"
+  },
+  "Transform Position": {
+    "prefix": "tpos",
+    "body": "transform.position = ${1:Vector3.zero};$0",
+    "description": "Set transform position"
+  },
+  "Transform LocalPosition": {
+    "prefix": "tlpos",
+    "body": "transform.localPosition = ${1:Vector3.zero};$0",
+    "description": "Set transform local position"
+  },
+  "Transform Rotation": {
+    "prefix": "trot",
+    "body": "transform.rotation = ${1:Quaternion.identity};$0",
+    "description": "Set transform rotation"
+  },
+  "Transform LocalRotation": {
+    "prefix": "tlrot",
+    "body": "transform.localRotation = ${1:Quaternion.identity};$0",
+    "description": "Set transform local rotation"
+  },
+  "Transform Scale": {
+    "prefix": "tscale",
+    "body": "transform.localScale = ${1:Vector3.one};$0",
+    "description": "Set transform scale"
+  },
+  "Transform LookAt": {
+    "prefix": "lookat",
+    "body": "transform.LookAt(${1:target});$0",
+    "description": "Transform LookAt"
+  },
+  "Transform Translate": {
+    "prefix": "translate",
+    "body": "transform.Translate(${1:Vector3.forward} * ${2:speed} * Time.deltaTime);$0",
+    "description": "Transform Translate"
+  },
+  "Transform Rotate": {
+    "prefix": "rotate",
+    "body": "transform.Rotate(${1:Vector3.up} * ${2:speed} * Time.deltaTime);$0",
+    "description": "Transform Rotate"
+  },
+  "Vector3 Zero": {
+    "prefix": "v3z",
+    "body": "Vector3.zero",
+    "description": "Vector3.zero"
+  },
+  "Vector3 One": {
+    "prefix": "v3o",
+    "body": "Vector3.one",
+    "description": "Vector3.one"
+  },
+  "Vector3 Forward": {
+    "prefix": "v3f",
+    "body": "Vector3.forward",
+    "description": "Vector3.forward"
+  },
+  "Vector3 Up": {
+    "prefix": "v3u",
+    "body": "Vector3.up",
+    "description": "Vector3.up"
+  },
+  "Vector3 Right": {
+    "prefix": "v3r",
+    "body": "Vector3.right",
+    "description": "Vector3.right"
+  },
+  "Vector3 New": {
+    "prefix": "v3",
+    "body": "new Vector3(${1:0f}, ${2:0f}, ${3:0f})$0",
+    "description": "New Vector3"
+  },
+  "Vector2 New": {
+    "prefix": "v2",
+    "body": "new Vector2(${1:0f}, ${2:0f})$0",
+    "description": "New Vector2"
+  },
+  "Vector3.Lerp": {
+    "prefix": "v3lerp",
+    "body": "Vector3.Lerp(${1:a}, ${2:b}, ${3:t})$0",
+    "description": "Vector3.Lerp"
+  },
+  "Vector3.Distance": {
+    "prefix": "v3dist",
+    "body": "Vector3.Distance(${1:a}, ${2:b})$0",
+    "description": "Vector3.Distance"
+  },
+  "Quaternion.Euler": {
+    "prefix": "qeul",
+    "body": "Quaternion.Euler(${1:0f}, ${2:0f}, ${3:0f})$0",
+    "description": "Quaternion.Euler"
+  },
+  "Quaternion.LookRotation": {
+    "prefix": "qlook",
+    "body": "Quaternion.LookRotation(${1:forward})$0",
+    "description": "Quaternion.LookRotation"
+  },
+  "Quaternion.Lerp": {
+    "prefix": "qlerp",
+    "body": "Quaternion.Lerp(${1:a}, ${2:b}, ${3:t})$0",
+    "description": "Quaternion.Lerp"
+  },
+  "Quaternion.Slerp": {
+    "prefix": "qslerp",
+    "body": "Quaternion.Slerp(${1:a}, ${2:b}, ${3:t})$0",
+    "description": "Quaternion.Slerp"
+  },
+  "Mathf.Lerp": {
+    "prefix": "mlerp",
+    "body": "Mathf.Lerp(${1:a}, ${2:b}, ${3:t})$0",
+    "description": "Mathf.Lerp"
+  },
+  "Mathf.Clamp": {
+    "prefix": "mclamp",
+    "body": "Mathf.Clamp(${1:value}, ${2:min}, ${3:max})$0",
+    "description": "Mathf.Clamp"
+  },
+  "Mathf.Clamp01": {
+    "prefix": "mclamp01",
+    "body": "Mathf.Clamp01(${1:value})$0",
+    "description": "Mathf.Clamp01"
+  },
+  "Mathf.Abs": {
+    "prefix": "mabs",
+    "body": "Mathf.Abs(${1:value})$0",
+    "description": "Mathf.Abs"
+  },
+  "Mathf.Sin": {
+    "prefix": "msin",
+    "body": "Mathf.Sin(${1:value})$0",
+    "description": "Mathf.Sin"
+  },
+  "Mathf.Cos": {
+    "prefix": "mcos",
+    "body": "Mathf.Cos(${1:value})$0",
+    "description": "Mathf.Cos"
+  },
+  "Mathf.Sqrt": {
+    "prefix": "msqrt",
+    "body": "Mathf.Sqrt(${1:value})$0",
+    "description": "Mathf.Sqrt"
+  },
+  "Random.Range": {
+    "prefix": "rrand",
+    "body": "Random.Range(${1:0f}, ${2:1f})$0",
+    "description": "Random.Range"
+  },
+  "Random.Range Int": {
+    "prefix": "rrandi",
+    "body": "Random.Range(${1:0}, ${2:10})$0",
+    "description": "Random.Range (int)"
+  },
+  "Time.deltaTime": {
+    "prefix": "tdt",
+    "body": "Time.deltaTime",
+    "description": "Time.deltaTime"
+  },
+  "Time.fixedDeltaTime": {
+    "prefix": "tfdt",
+    "body": "Time.fixedDeltaTime",
+    "description": "Time.fixedDeltaTime"
+  },
+  "Time.time": {
+    "prefix": "ttime",
+    "body": "Time.time",
+    "description": "Time.time"
+  },
+  "Input.GetKey": {
+    "prefix": "igetkey",
+    "body": "Input.GetKey(KeyCode.${1:Space})$0",
+    "description": "Input.GetKey"
+  },
+  "Input.GetKeyDown": {
+    "prefix": "igetkeydown",
+    "body": "Input.GetKeyDown(KeyCode.${1:Space})$0",
+    "description": "Input.GetKeyDown"
+  },
+  "Input.GetKeyUp": {
+    "prefix": "igetkeyup",
+    "body": "Input.GetKeyUp(KeyCode.${1:Space})$0",
+    "description": "Input.GetKeyUp"
+  },
+  "Input.GetButton": {
+    "prefix": "igetbutton",
+    "body": "Input.GetButton(\"${1:Jump}\")$0",
+    "description": "Input.GetButton"
+  },
+  "Input.GetButtonDown": {
+    "prefix": "igetbuttondown",
+    "body": "Input.GetButtonDown(\"${1:Jump}\")$0",
+    "description": "Input.GetButtonDown"
+  },
+  "Input.GetButtonUp": {
+    "prefix": "igetbuttonup",
+    "body": "Input.GetButtonUp(\"${1:Jump}\")$0",
+    "description": "Input.GetButtonUp"
+  },
+  "Input.GetAxis": {
+    "prefix": "igetaxis",
+    "body": "Input.GetAxis(\"${1:Horizontal}\")$0",
+    "description": "Input.GetAxis"
+  },
+  "Input.GetAxisRaw": {
+    "prefix": "igetaxisraw",
+    "body": "Input.GetAxisRaw(\"${1:Horizontal}\")$0",
+    "description": "Input.GetAxisRaw"
+  },
+  "Input.GetMouseButton": {
+    "prefix": "igetmouse",
+    "body": "Input.GetMouseButton(${1:0})$0",
+    "description": "Input.GetMouseButton"
+  },
+  "Input.GetMouseButtonDown": {
+    "prefix": "igetmousedown",
+    "body": "Input.GetMouseButtonDown(${1:0})$0",
+    "description": "Input.GetMouseButtonDown"
+  },
+  "Input.GetMouseButtonUp": {
+    "prefix": "igetmouseup",
+    "body": "Input.GetMouseButtonUp(${1:0})$0",
+    "description": "Input.GetMouseButtonUp"
+  },
+  "Input.mousePosition": {
+    "prefix": "imousepos",
+    "body": "Input.mousePosition",
+    "description": "Input.mousePosition"
+  },
+  "SceneManager.LoadScene": {
+    "prefix": "loadscene",
+    "body": "SceneManager.LoadScene(\"${1:SceneName}\");$0",
+    "description": "SceneManager.LoadScene"
+  },
+  "SceneManager.LoadScene Int": {
+    "prefix": "loadscenei",
+    "body": "SceneManager.LoadScene(${1:0});$0",
+    "description": "SceneManager.LoadScene (int)"
+  },
+  "SceneManager.LoadSceneAsync": {
+    "prefix": "loadsceneasync",
+    "body": "SceneManager.LoadSceneAsync(\"${1:SceneName}\");$0",
+    "description": "SceneManager.LoadSceneAsync"
+  },
+  "Rigidbody.AddForce": {
+    "prefix": "rbaddforce",
+    "body": "${1:rb}.AddForce(${2:Vector3.forward} * ${3:force}, ForceMode.${4:Impulse});$0",
+    "description": "Rigidbody.AddForce"
+  },
+  "Rigidbody.velocity": {
+    "prefix": "rbvel",
+    "body": "${1:rb}.velocity = ${2:Vector3.zero};$0",
+    "description": "Rigidbody.velocity"
+  },
+  "Rigidbody2D.AddForce": {
+    "prefix": "rb2daddforce",
+    "body": "${1:rb}.AddForce(${2:Vector2.up} * ${3:force}, ForceMode2D.${4:Impulse});$0",
+    "description": "Rigidbody2D.AddForce"
+  },
+  "Rigidbody2D.velocity": {
+    "prefix": "rb2dvel",
+    "body": "${1:rb}.velocity = ${2:Vector2.zero};$0",
+    "description": "Rigidbody2D.velocity"
+  },
+  "Animator.SetTrigger": {
+    "prefix": "anisettrigger",
+    "body": "${1:animator}.SetTrigger(\"${2:TriggerName}\");$0",
+    "description": "Animator.SetTrigger"
+  },
+  "Animator.SetBool": {
+    "prefix": "anisetbool",
+    "body": "${1:animator}.SetBool(\"${2:BoolName}\", ${3:true});$0",
+    "description": "Animator.SetBool"
+  },
+  "Animator.SetFloat": {
+    "prefix": "anisetfloat",
+    "body": "${1:animator}.SetFloat(\"${2:FloatName}\", ${3:0f});$0",
+    "description": "Animator.SetFloat"
+  },
+  "Animator.SetInteger": {
+    "prefix": "anisetint",
+    "body": "${1:animator}.SetInteger(\"${2:IntName}\", ${3:0});$0",
+    "description": "Animator.SetInteger"
+  },
+  "Animator.GetBool": {
+    "prefix": "anigetbool",
+    "body": "${1:animator}.GetBool(\"${2:BoolName}\")$0",
+    "description": "Animator.GetBool"
+  },
+  "Animator.GetFloat": {
+    "prefix": "anigetfloat",
+    "body": "${1:animator}.GetFloat(\"${2:FloatName}\")$0",
+    "description": "Animator.GetFloat"
+  },
+  "Animator.GetInteger": {
+    "prefix": "anigetint",
+    "body": "${1:animator}.GetInteger(\"${2:IntName}\")$0",
+    "description": "Animator.GetInteger"
+  },
+  "AudioSource.Play": {
+    "prefix": "audplay",
+    "body": "${1:audioSource}.Play();$0",
+    "description": "AudioSource.Play"
+  },
+  "AudioSource.PlayOneShot": {
+    "prefix": "audplayoneshot",
+    "body": "${1:audioSource}.PlayOneShot(${2:clip});$0",
+    "description": "AudioSource.PlayOneShot"
+  },
+  "AudioSource.Stop": {
+    "prefix": "audstop",
+    "body": "${1:audioSource}.Stop();$0",
+    "description": "AudioSource.Stop"
+  },
+  "ParticleSystem.Play": {
+    "prefix": "psplay",
+    "body": "${1:particleSystem}.Play();$0",
+    "description": "ParticleSystem.Play"
+  },
+  "ParticleSystem.Stop": {
+    "prefix": "psstop",
+    "body": "${1:particleSystem}.Stop();$0",
+    "description": "ParticleSystem.Stop"
+  },
+  "Property with backing field": {
+    "prefix": "prop",
+    "body": [
+      "private ${1:type} ${2:_fieldName};",
+      "public $1 ${3:PropertyName}",
+      "{",
+      "\tget => $2;",
+      "\tset => $2 = value;",
+      "}$0"
+    ],
+    "description": "Property with private backing field"
+  },
+  "Auto Property": {
+    "prefix": "propg",
+    "body": "public ${1:type} ${2:PropertyName} { get; set; }$0",
+    "description": "Auto-implemented property"
+  },
+  "Readonly Property": {
+    "prefix": "propr",
+    "body": "public ${1:type} ${2:PropertyName} { get; private set; }$0",
+    "description": "Readonly property"
+  },
+  "Property with initializer": {
+    "prefix": "propi",
+    "body": "public ${1:type} ${2:PropertyName} { get; set; } = ${3:default};$0",
+    "description": "Property with initializer"
+  },
+  "Region": {
+    "prefix": "region",
+    "body": [
+      "#region ${1:RegionName}",
+      "$0",
+      "#endregion"
+    ],
+    "description": "Region"
+  },
+  "Editor Only": {
+    "prefix": "ifdef",
+    "body": [
+      "#if UNITY_EDITOR",
+      "$0",
+      "#endif"
+    ],
+    "description": "Editor only code"
+  },
+  "Null Check": {
+    "prefix": "nullcheck",
+    "body": [
+      "if (${1:variable} == null)",
+      "{",
+      "\treturn;",
+      "}",
+      "$0"
+    ],
+    "description": "Null check with return"
+  },
+  "Null Check with Debug": {
+    "prefix": "nullcheckdebug",
+    "body": [
+      "if (${1:variable} == null)",
+      "{",
+      "\tDebug.LogError(\"${2:Variable} is null!\");",
+      "\treturn;",
+      "}",
+      "$0"
+    ],
+    "description": "Null check with debug message"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (int ${1:i} = 0; $1 < ${2:count}; $1++)",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "For loop"
+  },
+  "Foreach Loop": {
+    "prefix": "foreach",
+    "body": [
+      "foreach (${1:var} ${2:item} in ${3:collection})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Foreach loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "Do While Loop": {
+    "prefix": "dowhile",
+    "body": [
+      "do",
+      "{",
+      "\t$0",
+      "} while (${1:condition});"
+    ],
+    "description": "Do while loop"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "If statement"
+  },
+  "If Else Statement": {
+    "prefix": "ifelse",
+    "body": [
+      "if (${1:condition})",
+      "{",
+      "\t$0",
+      "}",
+      "else",
+      "{",
+      "\t",
+      "}"
+    ],
+    "description": "If else statement"
+  },
+  "Switch Statement": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:variable})",
+      "{",
+      "\tcase ${2:value}:",
+      "\t\t$0",
+      "\t\tbreak;",
+      "\tdefault:",
+      "\t\tbreak;",
+      "}"
+    ],
+    "description": "Switch statement"
+  },
+  "Try Catch": {
+    "prefix": "try",
+    "body": [
+      "try",
+      "{",
+      "\t$0",
+      "}",
+      "catch (System.Exception e)",
+      "{",
+      "\tDebug.LogError(e);",
+      "}"
+    ],
+    "description": "Try catch block"
+  },
+  "Using Statement": {
+    "prefix": "using",
+    "body": "using ${1:System};",
+    "description": "Using statement"
+  }
+}
