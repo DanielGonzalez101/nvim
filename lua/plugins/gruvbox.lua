@@ -20,15 +20,16 @@ return {
         invert_signs = false,
         invert_tabline = false,
         inverse = true,
-        contrast = "",             -- puede ser "hard", "soft", "" (normal)
+        contrast = "", -- puede ser "hard", "soft", "" (normal)
         palette_overrides = {},
-        overrides = {},
         dim_inactive = false,
         transparent_mode = false,
+        overrides = {
+          SignColumn = { bg = "#282828" },
+        },
       })
       vim.o.background = "dark"
       vim.cmd([[colorscheme gruvbox]])
     end,
   },
 }
-

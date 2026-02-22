@@ -10,13 +10,6 @@ vim.o.scrolloff = 8
 vim.opt.swapfile = false
 
 -- Columna de signos igual al fondo
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  callback = function()
-    vim.cmd("highlight! link SignColumn Normal")
-  end,
-})
-
 -- Ruta para Lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -52,7 +45,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- 🔥 Esto lo forza incluso si otro plugin intenta sobrescribirlo
---vim.api.nvim_set_hl(0, "SignColumn", { bg = "#121212" })
+--vim.api.nvim_set_hl(0, "SignColumn", { bg = "#282829" })
 -- Configurar diagnósticos (sin signos en la columna)
 vim.diagnostic.config({
   signs = false,

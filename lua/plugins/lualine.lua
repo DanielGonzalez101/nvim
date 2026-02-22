@@ -1,47 +1,48 @@
-
 return {
-	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons", "linrongbin16/lsp-progress.nvim" },
-	config = function()
-		local devicons = require("nvim-web-devicons")
-		local lsp_progress = require("lsp-progress")
-
-		require("lualine").setup({
-			sections = {
-				lualine_a = { "mode" },
-				lualine_b = { "branch" },
-				lualine_c = { "filename" },
-				lualine_x = {
-					{
-						"diagnostics",
-						sources = { "nvim_diagnostic" },
-						sections = { "error", "warn", "info", "hint" },
-						symbols = { error = " ", warn = " ", info = " ", hint = " " },
-						colored = true,
-						update_in_insert = false,
-						always_visible = false,
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "ellisonleao/gruvbox.nvim", "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("lualine").setup({
+				options = {
+					icons_enabled = true,
+					theme = "auto",
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
+					disabled_filetypes = {
+						statusline = {},
+						winbar = {},
 					},
-					-- 🔥 Aquí va lsp-progress en tu lualine
-					function()
-						return lsp_progress.progress()
-					end,
-					function()
-						local file = vim.fn.expand("%:t")
-						local ext = vim.fn.expand("%:e")
-						local icon = devicons.get_icon(file, ext, { default = true })
-						return icon or ""
-					end,
+					ignore_focus = {},
+					always_divide_middle = true,
+					globalstatus = false,
+					refresh = {
+						statusline = 1000,
+						tabline = 1000,
+						winbar = 1000,
+					},
 				},
-				lualine_y = { "progress" },
-				lualine_z = { "location" },
-			},
-		})
-
-		-- 🔥 Necesario para refrescar la barra cuando cambie el progreso
-		vim.api.nvim_create_autocmd("User", {
-			pattern = "LspProgressStatusUpdated",
-			callback = require("lualine").refresh,
-		})
-	end,
+				sections = {
+					lualine_a = { "mode" },
+					lualine_b = { "branch", "diff", "diagnostics" },
+					lualine_c = { "filename" },
+					lualine_x = { "encoding", "fileformat", "filetype" },
+					lualine_y = { "progress" },
+					lualine_z = { "location" },
+				},
+				inactive_sections = {
+					lualine_a = {},
+					lualine_b = {},
+					lualine_c = { "filename" },
+					lualine_x = { "location" },
+					lualine_y = {},
+					lualine_z = {},
+				},
+				tabline = {},
+				winbar = {},
+				inactive_winbar = {},
+				extensions = {},
+			})
+		end,
+	},
 }
-
