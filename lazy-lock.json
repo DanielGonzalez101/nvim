@@ -37,6 +37,10 @@
   "telescope.nvim": { "branch": "master", "commit": "e69b434b968a33815e2f02a5c7bd7b8dd4c7d4b2" },
   "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
   "vim-automata-theme": { "branch": "master", "commit": "a74568fe29c75ab15a536374219394a03ee88f39" },
+  "vim-dadbod": { "branch": "master", "commit": "6d1d41da4873a445c5605f2005ad2c68c99d8770" },
+  "vim-dadbod-completion": { "branch": "master", "commit": "a8dac0b3cf6132c80dc9b18bef36d4cf7a9e1fe6" },
+  "vim-dadbod-ui": { "branch": "master", "commit": "07e92e22114cc5b1ba4938d99897d85b58e20475" },
+  "vim-dotenv": { "branch": "master", "commit": "5c51cfcf8d87280d6414e03cd6b253eb70ecb800" },
   "vim-monokai": { "branch": "master", "commit": "ccaaf4bf983e828e46d47288d0278316486d718b" },
   "vscode_modern_theme.nvim": { "branch": "main", "commit": "07b2cecfbc53e9edede889a852e7ccab714a5529" }
 }
