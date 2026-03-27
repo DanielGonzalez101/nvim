@@ -1,36 +1,33 @@
 return {
-    "nvimtools/none-ls.nvim",
-    dependencies = {
-        "nvimtools/none-ls-extras.nvim",
-    },
-    config = function()
-        local null_ls = require("null-ls")
-
-        null_ls.setup({
-            sources = {
-                -- 🧼 FORMATTERS
-                null_ls.builtins.formatting.stylua, -- Lua
-                null_ls.builtins.formatting.prettier, -- JS, TS, HTML, CSS...
-                null_ls.builtins.formatting.gofmt, -- Go
-
-                -- ✍️ AUTOCOMPLETADO
-                null_ls.builtins.completion.spell, -- Autocompletado de palabras
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.isort,
-            },
-        })
-
-        -- 🔑 Formatear manualmente con <leader>f
-        vim.keymap.set("n", "<leader>f", function()
-            vim.lsp.buf.format({ async = true })
-        end, {})
-
-        -- 💾 Autoformateo al guardar archivos Go
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = "*.go",
-            callback = function()
-                vim.lsp.buf.format({ async = false })
-            end,
-        })
-    end,
+	"stevearc/conform.nvim",
+	event = { "BufWritePre" },
+	config = function()
+		local conform = require("conform")
+		conform.setup({
+			formatters_by_ft = {
+				lua = { "stylua" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				html = { "prettier" },
+				css = { "prettier" },
+				scss = { "prettier" },
+				json = { "prettier" },
+				go = { "gofmt" },
+				python = { "isort", "black" },
+				--cs = { "lsp" },
+			},
+			format_on_save = {
+				go = { timeout_ms = 500, lsp_fallback = true },
+			},
+		})
+		vim.keymap.set("n", "<leader>f", function()
+			conform.format({ async = true, lsp_fallback = true })
+		end, {}) -- Autoformateo al guardar archivos Go
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*.go",
+			callback = function()
+				conform.format({ async = false })
+			end,
+		})
+	end,
 }

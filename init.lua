@@ -13,14 +13,14 @@ vim.opt.swapfile = false
 -- Ruta para Lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -38,28 +38,28 @@ require("vim-options")
 
 -- Formatear archivos Go antes de guardar
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-    vim.lsp.buf.format({ async = false })
-  end,
+	pattern = "*.go",
+	callback = function()
+		vim.lsp.buf.format({ async = false })
+	end,
 })
 
 -- 🔥 Esto lo forza incluso si otro plugin intenta sobrescribirlo
 --vim.api.nvim_set_hl(0, "SignColumn", { bg = "#282829" })
 -- Configurar diagnósticos (sin signos en la columna)
 vim.diagnostic.config({
-  signs = false,
+	signs = false,
 })
 
 -- Asegurar buffers modificables y formato unix
 vim.api.nvim_create_autocmd("BufReadPost", {
-  pattern = "*",
-  callback = function()
-    if not vim.bo.readonly and not vim.bo.modifiable then
-      vim.bo.modifiable = true
-    end
-    vim.bo.fileformat = "unix"
-  end,
+	pattern = "*",
+	callback = function()
+		if not vim.bo.readonly and not vim.bo.modifiable then
+			vim.bo.modifiable = true
+		end
+		vim.bo.fileformat = "unix"
+	end,
 })
 
 -- Estilos para ventanas flotantes

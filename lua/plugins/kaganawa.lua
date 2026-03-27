@@ -20,9 +20,9 @@ return {
 		})
 		-- Puedes obtener estos desde la documentación del tema o usar :Inspect
 		-- Aquí unos ejemplos comunes:
---		vim.cmd("colorscheme kanagawa-wave")
-		--vim.api.nvim_set_hl(0, "LineNr", { bg = "#2A2A37" })
---		vim.api.nvim_set_hl(0, "SignColumn", { bg = "#2A2A37" })
-		--vim.api.nvim_set_hl(0, "FoldColumn", { bg = "#2A2A37" })
+		vim.cmd("colorscheme kanagawa-wave")
+		vim.api.nvim_set_hl(0, "LineNr", { bg = "#2A2A37" })
+		vim.api.nvim_set_hl(0, "SignColumn", { bg = "#2A2A37" })
+		vim.api.nvim_set_hl(0, "FoldColumn", { bg = "#2A2A37" })
 	end,
 }

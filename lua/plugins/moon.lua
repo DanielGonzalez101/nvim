@@ -1,1 +1,7 @@
-return { "bluz71/vim-moonfly-colors", name = "moonfly", lazy = false, priority = 1000 }
+return {
+	"bluz71/vim-moonfly-colors",
+	name = "moonfly",
+	lazy = false,
+	priority = 1000,
+	--vim.cmd([[colorscheme moonfly]]),
+}

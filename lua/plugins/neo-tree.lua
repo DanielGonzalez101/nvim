@@ -21,7 +21,7 @@ return {
 				popup = {
 					size = {
 						height = "80%",
-						width = "50%",
+						width = "30%",
 					},
 					position = "50%",
 					border = "solid",

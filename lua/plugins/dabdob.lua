@@ -60,6 +60,10 @@ return {
           name = "SQLite Ejemplo",
           url = "sqlite:///home/user/mydb.sqlite",
         },
+        {
+          name = "supabase",
+          url = "postgresql://postgres:[YOUR-PASSWORD]@db.xdvsqtytyftwmznrbwjw.supabase.co:5432/postgres"
+        }
         -- Puedes agregar más conexiones aquí...
       }
     end,
